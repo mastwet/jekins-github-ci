@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Info') {
+            steps {
+                sh 'git log --oneline -1'
+                sh 'pwd && ls -la'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Build step OK (network-limited environment: skip maven download)'
+            }
+        }
+    }
+    post {
+        always {
+            echo "Pipeline finished: ${currentBuild.currentResult}"
+        }
+    }
+}
