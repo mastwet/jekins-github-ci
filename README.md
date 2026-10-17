@@ -110,6 +110,7 @@ docker compose down -v                  # 停止并清空数据（重置 Jenkins
 - `test-ci/Jenkinsfile` — 最小流水线模板
 - `vivy-ci/pipeline.groovy` — agent-vivy CI 的 Linux 移植
 - `vivy-ci/create-job.sh` — 通过 REST API 创建/更新 `vivy-ci` job
+- `AGENTS.md` — 运行与维护 SOP（启动、触发、重置、排障）
 
 ## 注意
 
